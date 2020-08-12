@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="init()">
+    <header class="flex">
+        <div class="logo">Logo</div>
+        <nav class="header-nav justify-center flex">
+            <button onclick="onGoToGallery()">Gallery</button>
+            <button>About</button>
+        </nav>
+    </header>
+    <main class="main-gallery">
+        <section class="gallery-container grid">
+
+        </section>
+    </main>
+
+    <mai<n class="meme-editing flex">
+
+        <div class="canvas-container">
+            <canvas id="myCanvas" onclick="draw(event)"></canvas>
+        </div>
+
+        <div class="controls-panel flex column">
+
+            <input type="text" name="" id="meme-txt" placeholder="Enter your meme here">
+            <div class="meme-controls">
+                <button>↑↓</button>
+                <button>+</button>
+                <button>🗑️</button>
+            </div>
+
+            <div class="text-controls flex">
+                <button>A +</button>
+                <button>A -</button>
+                <button>L</button>
+                <button>C</button>
+                <button>R</button>
+                <select>
+                    <option>Impact</option>
+                    <option>Ariel</option>
+                    <option>Cursive</option>
+                    <option>Monospace</option>
+                </select>
+                <button>s_</button>
+                <button><input type="color" name="" id="fill-color" value="" hidden>🎨</button>
+            </div>
+
+            <button>Share</button>
+            <button>Download</button>
+        </div>
+        </main>
+
+
+
+        <script src="js/utils.js"></script>
+        <script src="js/mainService.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>

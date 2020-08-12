@@ -1,0 +1,120 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: #22252c;
+}
+
+button{
+    outline: none;
+    cursor: pointer;
+}
+
+header{
+    margin: 16px;
+    background: linear-gradient(90deg, rgb(16,155,178), rgb(30,169,151), rgb(47,186,116));
+    border-radius: 100px;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;}
+    .logo{
+        margin-left: 80px;}
+    .header-nav{
+        flex-basis: 50%;}
+        .header-nav button{
+            border: none;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+}
+
+
+.main-gallery{
+    background-color: rgb(56,59,66);
+    width: fit-content;
+    margin: 16px auto;
+    padding: 60px;
+    border-radius: 12px;}
+.gallery-container{
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-rows:auto;}
+    .gallery-container img{
+        border-radius: 12px;
+        width:250px;
+        height: 220px;
+        object-fit: cover;
+        box-shadow: 0px 3px 6.02px 0.98px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+    }
+
+
+.meme-editing{
+
+    margin: 20px auto;
+    width: 90vw;
+    justify-content: space-around;}
+    /* .canvas-container{
+    border: 2px solid salmon;} */
+    #myCanvas{
+        border-radius: 10px;
+        /* object-fit: fill; */
+    }
+    .controls-panel{
+        width: 525px;
+        padding: 25px 39px;
+        border-radius: 20px;
+        background-color: rgb(56,59,66);
+        align-items: center;}
+        .controls-panel> *{
+           width: 450px; 
+            margin-bottom:30px}
+          .controls-panel *{
+            border-radius: 5px;
+            border: none;}      
+          .controls-panel input,select,button{
+              height: 50px;
+              line-height: 1.1rem;
+              border-radius: 100px;}
+        .text-controls{
+            color: rgb(34, 37, 44);
+            background-color: #19a59f;
+            justify-content: space-between;
+            flex-wrap: wrap;}
+            .text-controls button, select{
+                background-color: white;
+                margin: 5px 18px;
+                width: 50px;
+                height: 50px;
+                outline: none;
+                padding: 5px 20px;}
+                .text-controls  select{
+                    flex-grow: 1;
+                }
+
+/*HELPERS*/
+
+.flex{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.grid{
+    display: grid;
+}
+
+  
+
+  /* background: linear-gradient( 128deg, rgb(203, 200, 245) 0%, rgb(160,139,255) 100%);
+background: linear-gradient( 128deg, rgb(128,118,253) 0%, rgb(160,139,255) 100%);
+background: linear-gradient( 128deg, rgb(128,118,253) 0%, rgb(160,139,255) 100%);
+box-shadow: 5px 100px 0px 0px rgba(225, 229, 235, 0.004),inset 0px 5px 0px 0px rgba(253, 253, 253, 0.004);*/
