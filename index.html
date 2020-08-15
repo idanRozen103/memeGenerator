@@ -25,44 +25,72 @@
     <mai<n class="meme-editing flex">
 
         <div class="canvas-container">
-            <canvas id="myCanvas" onclick="draw(event)"></canvas>
+            <canvas id="myCanvas" width="650" height="550" style="object-fit:cover;"></canvas>
         </div>
 
         <div class="controls-panel flex column">
 
-            <input type="text" name="" id="meme-txt" placeholder="Enter your meme here">
-            <div class="meme-controls">
-                <button>↑↓</button>
-                <button>+</button>
-                <button>🗑️</button>
+            <input class="control" type="text" name="" id="meme-txt" placeholder="Enter your meme here"
+                oninput="onSetTxt(this.value, event.key)">
+            <div class="meme-controls flex justify-center">
+                <button class="control switch-line margin-left" onclick="onSwitchLine()"><i
+                        class="fas fa-exchange-alt"></i></button>
+                <button class="control add margin-left" onclick="onAddLine()"><i class="fas fa-plus"></i></button>
+                <button class="control remove margin-left" onclick="onRemoveLine()"><i class="fas fa-trash-alt"></i></button>
             </div>
 
             <div class="text-controls flex">
-                <button>A +</button>
-                <button>A -</button>
-                <button>L</button>
-                <button>C</button>
-                <button>R</button>
-                <select>
-                    <option>Impact</option>
-                    <option>Ariel</option>
-                    <option>Cursive</option>
-                    <option>Monospace</option>
+                <button class="control" onclick="onChangeTxtSize('bigger')">A+</button>
+                <button class="control" onclick="onChangeTxtSize('smaller')">A-</button>
+                <button class="control" onclick="onChangeTxtDirection('left')"><i
+                        class="fas fa-align-left"></i></button>
+                <button class="control" onclick="onChangeTxtDirection('center')"><i
+                        class="fas fa-align-center"></i></button>
+                <button class="control" onclick="onChangeTxtDirection('right')"><i
+                        class="fas fa-align-right"></i></button>
+                <select class="control" onchange="onChangeFont(this.value)">
+                    <option value="Impact">Impact</option>
+                    <option value="Ariel">Ariel</option>
+                    <option value="Cursive">Cursive</option>
+                    <option value="Monospace">Monospace</option>
                 </select>
-                <button>s_</button>
-                <button><input type="color" name="" id="fill-color" value="" hidden>🎨</button>
+                <button class="control" onclick="onLineUpward()"><i class="fas fa-arrow-circle-up"></i></button>
+                <button class="control" onclick="onLineDownward()"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                <button class="control"><label for="fill-color" class=" fas fa-palette"> <input type="color"
+                            id="fill-color" style="visibility: hidden;" oninput="onChangeFillColor(this.value)">
+                    </label></button>
             </div>
 
-            <button>Share</button>
-            <button>Download</button>
+            <div class="export flex justify-center">
+                <form class="control share" action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                    <a class="share-container "></a>
+
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="btn fab fa-facebook-square fb" type="submit">
+                        
+                    </button>
+                </form>
+                <button class="control download margin-left"><a href="#" onclick="downloadCanvas(this)" download="" class="fas fa-download"></a></button>
+
+            </div>
+            
+            <div class="export flex justify-center">
+               
+                
+            </div>
+
+
+
+
         </div>
         </main>
-
-
-
+        <script src="https://kit.fontawesome.com/a7c8057fcc.js" crossorigin="anonymous"></script>
         <script src="js/utils.js"></script>
+        <script src="js/storageService.js"></script>
         <script src="js/mainService.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/memeService.js"></script>
+        <script src="js/memeController.js"></script>
 </body>
 
 </html>
