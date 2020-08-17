@@ -2,6 +2,7 @@
 
 function init() {
     document.querySelector('.meme-editing').style.display = 'none'
+    document.querySelector('.body').style.overflowY = 'hidden'
     renderGallery()
 }
 

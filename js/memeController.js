@@ -9,6 +9,7 @@ function renderEditingPage(currImg) {
     gCanvas = document.querySelector('#myCanvas');
     gCtx = gCanvas.getContext('2d');
     document.querySelector('.main-gallery').style.display = 'none'
+    document.querySelector('.body').style.overflowY = 'scroll'
     document.querySelector('.meme-editing').style.display = 'flex'
     drawImgFromlocal(currImg)
     createMeme(currImg)
@@ -18,31 +19,22 @@ function resizeCanvas() {
     const elCanvas = document.querySelector('.canvas-container')
     // var scale = Math.max(gCurrImg.height / gCurrImg.width, gCurrImg.width / gCurrImg.height)
     var scale = gCurrImg.width / gCurrImg.height
+    console.log('document',document.documentElement.clientWidth);
 
-
-    console.log(elCanvas.offsetWidth);
-
-    if (elCanvas.offsetWidth < 500) {
+    if (document.documentElement.clientWidth < 750) {
         gCanvas.width = elCanvas.offsetWidth;
         gCanvas.height = gCanvas.width / scale
-        // gCanvas.height = (scale === 1) ? elCanvas.offsetHeight : ((gCurrImg.height < gCanvas.height / 2) ? gCurrImg.height * scale : (gCurrImg.height > gCanvas.height) ? gCanvas.height / scale : gCurrImg.height / scale)
     }
     else {
-        console.log(gCurrImg.width/ gCurrImg.height);
         gCanvas.height = elCanvas.offsetHeight;
         gCanvas.width =gCanvas.height * scale 
-        
-        // ((gCurrImg.width < gCanvas.width ) ? gCurrImg.width / scale : (gCurrImg.width > gCanvas.width) ? gCanvas.width / scale : gCurrImg.width / scale)
-        // : (gCurrImg.width > gCanvas.width) ? gCanvas.width / scale : gCurrImg.width / scale)
+
     }
 }
 
-// gCanvas.height = elCanvas.offsetHeight;
-// gCanvas.width = (scale === 1) ? elCanvas.offsetWidth : ((gCurrImg.width > gCurrImg.height) ? gCurrImg.width * (gCanvas.height/gCanvas.width) : elCanvas.offsetWidth)
-
-
 function onGoToGallery() {
     document.querySelector('.main-gallery').style.display = 'grid'
+    document.querySelector('.body').style.overflowY = 'hidden'
     document.querySelector('.meme-editing').style.display = 'none'
 }
 

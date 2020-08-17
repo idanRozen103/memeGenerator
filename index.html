@@ -11,7 +11,7 @@
 <body onload="init()">
     <div class="body">
         <header class="flex container">
-            <div class="logo">Logo</div>
+            <div class="logo">MemeGen</div>
             <nav class="header-nav justify-center flex">
                 <button onclick="onGoToGallery()">Gallery</button>
                 <button>About</button>
@@ -34,7 +34,7 @@
         <mai<n class="meme-editing flex">
 
             <div class="canvas-container">
-                <canvas id="myCanvas" width="450" height="450" ></canvas>
+                <canvas id="myCanvas" width="400" height="400" ></canvas>
             </div>
 
             <div class="controls-panel flex column">
@@ -42,10 +42,10 @@
                 <input class="control" type="text" name="" id="meme-txt" placeholder="Enter your meme here"
                     oninput="onSetTxt(this.value, event.key)">
                 <div class="meme-controls flex justify-center">
-                    <button class="control switch-line margin-left" onclick="onSwitchLine()"><i
+                    <button class="control switch-line margin-left" onclick="onSwitchLine()" title="select the next line"><i
                             class="fas fa-exchange-alt"></i></button>
-                    <button class="control add margin-left" onclick="onAddLine()"><i class="fas fa-plus"></i></button>
-                    <button class="control remove margin-left" onclick="onRemoveLine()"><i
+                    <button class="control add margin-left" onclick="onAddLine()"><i class="fas fa-plus" title="Add another line"></i></button>
+                    <button class="control remove margin-left" onclick="onRemoveLine()" title="Delete the selected line"><i
                             class="fas fa-trash-alt"></i></button>
                 </div>
 
@@ -64,10 +64,10 @@
                         <option value="Cursive">Cursive</option>
                         <option value="Monospace">Monospace</option>
                     </select>
-                    <button class="control" onclick="onLineUpward()"><i class="fas fa-arrow-circle-up"></i></button>
-                    <button class="control" onclick="onLineDownward()"><i
+                    <button class="control" onclick="onLineUpward()" title="Move line up"><i class="fas fa-arrow-circle-up"></i></button>
+                    <button class="control" onclick="onLineDownward()" title="Move line down"><i
                             class="fas fa-arrow-alt-circle-down"></i></button>
-                    <button class="control"><label for="fill-color" class=" fas fa-palette"> <input type="color"
+                    <button class="control" title="Change text fill-color"><label for="fill-color" class=" fas fa-palette"> <input type="color"
                                 id="fill-color" style="visibility: hidden;" oninput="onChangeFillColor(this.value)">
                         </label></button>
                 </div>
